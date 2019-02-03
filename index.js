@@ -142,10 +142,13 @@ sumZero([-2,0,1,3]) // undefined
 sumZero([1,2,3]) // undefined
 */
 
-// Naive solution to Pair Sum
+// Naive solution to Pair Sum - O(n^2) time 
 function sumZero(arr) {
+    // iterate over array
     for (let i = 0; i < arr.length; i++) {
+        // iterate over array from next index
         for (let j = i + 1; j < arr.length; j++) {
+            // if the two values sum to 0, return the pair
             if (arr[i] + arr[j] === 0) {
                 return [arr[i], arr[j]];
             }
@@ -156,3 +159,33 @@ function sumZero(arr) {
 console.log(sumZero([-3,-2,-1,0,1,2,3])); // [-3,3] 
 console.log(sumZero([-2,0,1,3])); // undefined
 console.log(sumZero([1,2,3])); // undefined
+
+// Improved solution to Pair Sum - O(n) time
+function betterSumZero(arr) {
+    // declare two pointers to the head and tail of array
+    let left = 0;
+    let right = arr.length - 1;
+
+    // while the left index is less than the right index, loop
+    while (left < right) {
+        // store the sum as the values of left + right
+        let sum = arr[left] + arr[right];
+
+        // if the sum is 0, we are done and return the pair
+        if (sum === 0) {
+            return [arr[left], arr[right]];
+        }
+        // if the sum is greater than 0, move the right pointer down 1
+        else if (sum > 0) {
+            right --;
+        }
+        // if the sum is less than 0, move the left pointer up 1
+        else {
+            left ++;
+        }
+    }
+}
+
+console.log(betterSumZero([-3,-2,-1,0,1,2,3])); // [-3,3] 
+console.log(betterSumZero([-2,0,1,3])); // undefined
+console.log(betterSumZero([1,2,3])); // undefined
