@@ -36,3 +36,48 @@ function squared(arr1, arr2) {
 console.log(squared([1,2,3], [1,4,9])); // true
 console.log(squared([1,2,3], [1,4,10])); // false
 
+// Frequency Counter Better Solution
+// time complexity - O(n) -- iterating over two arrays of the same length, at most.
+// O(2n) => O(n)
+// space complexity - O(n) -- occupying n space 
+
+function betterSquared(arr1, arr2) {
+    // check arrays for same length
+    if (arr1.length !== arr2.length) {
+        return false;
+    }
+
+    // create two objects to hold values and counts of values
+    let obj1 = {};
+    let obj2 = {};
+
+    // iterate over each array separately and add value/count pairs to objects
+    for (let element of arr1) {
+        obj1[element] = (arr1[element] || 0) + 1;
+    }
+
+    for (let element of arr2) {
+        obj2[element] = (arr2[element] || 0) + 1;
+    }
+
+    // for each key in object 1, search for its value squared in obj2
+    // object lookups happen in constant time
+    for (let key in obj1) {
+        // check to see if the key squared exist in object 2
+        if (!(key **2 in obj2)) {
+            return false;
+        }
+
+        // check if the count of key and key^2 are the same
+        if (obj1[key] !== obj2[key ** 1]) {
+            return false;
+        }
+     
+    }
+
+    return true;
+}
+
+
+console.log(betterSquared([1,2,3], [1,4,9])); // true
+console.log(betterSquared([1,2,3], [1,4,10])); // false
