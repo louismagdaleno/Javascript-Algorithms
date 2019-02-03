@@ -189,3 +189,45 @@ function betterSumZero(arr) {
 console.log(betterSumZero([-3,-2,-1,0,1,2,3])); // [-3,3] 
 console.log(betterSumZero([-2,0,1,3])); // undefined
 console.log(betterSumZero([1,2,3])); // undefined
+
+
+// Count Unique Values - O(n) time
+/*
+Implement a function called countUniqueValues, which accepts a sorted array, 
+and counts the unique values in the array. There can be negative numbers in the array, 
+but it will always be sorted. */
+
+function countUniqueValues(arr){
+    // add whatever parameters you deem necessary - good luck!
+      if (arr) {
+          // create two index values, first and next
+          let a = 0;
+          let b = 1;
+
+          // iterate over array
+          for (let i = 0; i < arr.length; i++) {
+              
+            // check if the values at a and b are the same, if so increment b
+              if (arr[a] === arr[b]) {
+                  b++;
+              }
+              // if the values are different, then
+              else {
+                  // increment a
+                  a++;
+                  // overwrite the value at index a with the value in index b
+                  arr[a] = arr[b];
+                  // increment b
+                  b++;
+              }
+          }
+      // at this point, a is equal to the amount of unique values in our array. return it
+      return a;
+      }
+  }
+
+
+console.log(countUniqueValues([1,1,1,1,1,2])); // 2
+console.log(countUniqueValues([1,2,3,4,4,4,7,7,12,12,13])); // 7
+console.log(countUniqueValues([])); // 0
+console.log(countUniqueValues([-2,-1,-1,0,1])); // 4
