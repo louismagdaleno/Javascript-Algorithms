@@ -18,3 +18,7 @@ Creating `pointers` or values that correspond to an index or position and move t
 
 ## Pair Sum
 Compare different indices in an array until a condition is met. For example, given an array of integers, find a pair of numbers whos sum is 0.
+
+A naive solution is using a nested for loop to check for every possible combination of numbers to sum 0. This will take O(n^2) time.
+
+A more efficient solution is to use two pointers: head and tail. These pointers respectively point to the head and tail of an array. In a sorted array, we are able compare head to tail and check if they sum to 0. If the sum is greater than 1, we move the tail pointer down. If the sum is less than 1, we move the head pointer up. If the sum is 0, we are done and return the pair.  This will take O(n) time to run, a significant improvement over our naive solution.
