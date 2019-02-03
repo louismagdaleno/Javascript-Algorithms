@@ -8,7 +8,7 @@ Also, the number of times a value occurs must be the same that the value ^2 occu
 
 A naive solution could be iterating over all possible combinations to check if the pairs exist, which would be an O(n^2) runtime.
 
-A better solution is to iterate over both arrays individually and store their numbers and counts of numbers as key/value pairs in an object. Once the objects are constructured, check to see if the keys in object one exist as keys^2 in obj2. Also, the count of each pair of values would also need to be equal.  This solutions, with constant time lookups, runs in O(n) time.
+A better solution is to iterate over both arrays individually and store their numbers and counts of numbers as key/value pairs in an object. Once the objects are constructured, check to see if the keys in object one exist as keys^2 in obj2. Also, the count of each pair of values would also need to be equal.  This solution, with constant time lookups, runs in O(n) time, which is a significant improvement over the O(n^2).
 
 ## Anagrams
 Given two strings, check to see if the strings are anagrams of each other.  Using the frequency pattern, we are able to achieve a time complexity of O(n).
