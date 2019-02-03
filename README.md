@@ -12,3 +12,6 @@ A better solution is to iterate over both arrays individually and store their nu
 
 ## Anagrams
 Given two strings, check to see if the strings are anagrams of each other.  Using the frequency pattern, we are able to achieve a time complexity of O(n).
+
+## Multiple Pointers
+Creating `pointers` or values that correspond to an index or position and move towards the beginning, end, or middle based on a certain condition. `VERY` efficient for soliving problems with minimal space complexity as well.
