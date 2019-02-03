@@ -15,3 +15,6 @@ Given two strings, check to see if the strings are anagrams of each other.  Usin
 
 ## Multiple Pointers
 Creating `pointers` or values that correspond to an index or position and move towards the beginning, end, or middle based on a certain condition. `VERY` efficient for soliving problems with minimal space complexity as well.
+
+## Pair Sum
+Compare different indices in an array until a condition is met. For example, given an array of integers, find a pair of numbers whos sum is 0.
