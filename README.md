@@ -27,3 +27,13 @@ A more efficient solution is to use two pointers: head and tail. These pointers 
 Implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted.
 
 This can be accomplished in linear time by using multiple variables. The first variable, A,  would refer to the index 0, the second variable, B,  would refer to index 1. Iterate over the array and compare the values at A and B. If the values are the same, increment B. If the values are different, a unique value has been found. At this point, increment A and overwrite the value stored at that index with the value stored at index B, then increment index b. Upon completion of scanning the entire array once, the variable A will contain the number of unique values in the array.
+
+## Sliding Window
+This pattern involves creating a window which can either be an array or number from one position to another
+
+Depending on a certain condition, the window either increases or closes (and a new window is created)
+
+Very useful for keeping track of a subset of data in an array/string etc.
+
+## Max Subarray Sum
+Write a function called maxSubarraySum which accepts an array of integers and a number called n. The function should calculate the maximum sum of n consecutive elements in the array.
