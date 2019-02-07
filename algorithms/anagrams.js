@@ -47,3 +47,22 @@ console.log(pairSumPlus(8, [1,2,3,9]));
 console.log(pairSumPlus(8, [1,2,4,4]));
 console.log(pairSumPlus(8, [-4,-3,-2,-1,0,1,2,3,4,5]));
 
+// interview throws wrench in problem at this point in talk
+// can no longer guarantee that the list is sorted
+
+// O(n) time for unsorted list because of object constant time lookup.
+
+function pairSumUnsorted(target, arr) {
+    let obj = {};
+    for (let i = 0; i < arr.length; i++) {
+        if (obj[target - arr[i]]) {
+            return [target - arr[i], arr[i]];
+        } else {
+            obj[arr[i]] = 1;
+        }
+    }
+    return - 1;
+}
+console.log(pairSumUnsorted(8, [9,3,1,2]));
+console.log(pairSumUnsorted(8, [4,2,2,4]));
+console.log(pairSumUnsorted(8, [-4,5,-2,3,0,-1,2,3,4,-5]));
