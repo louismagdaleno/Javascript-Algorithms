@@ -1,8 +1,6 @@
 // Google Interview Question on Youtube
 // https://www.youtube.com/watch?v=XKu_SEDAykw&t=941s
 // Given a number, and an array of sorted numbers, find a pair in the array that sum to the target number. return the pair if found, -1 if not
-// [1,2,3,9] sum = 8 find pair that sum to 8 false
-// [1,2,4,4] sum = 8 find pair that sum to 8 true
 // THEY ARE ORDERED ASCENDING
 
 // O(n^2) time, O(1) space
@@ -47,7 +45,7 @@ console.log(pairSumPlus(8, [1,2,3,9]));
 console.log(pairSumPlus(8, [1,2,4,4]));
 console.log(pairSumPlus(8, [-4,-3,-2,-1,0,1,2,3,4,5]));
 
-// interview throws wrench in problem at this point in talk
+// interviewer throws wrench in problem at this point in talk
 // can no longer guarantee that the list is sorted
 
 // O(n) time for unsorted list because of object constant time lookup.
