@@ -15,10 +15,10 @@
 function maxSubarraySum(arr, n) {
     if (arr.length === 0) return null;
     let max = -Infinity;
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length - n + 1; i++) {
 
         let sum = arr[i];
-        for (let j = i + 1; j < i + n; j ++) {
+        for (let j = 0; j < n; j ++) {
             sum += arr[j];
         }
        if (sum > max) max = sum;
