@@ -38,5 +38,9 @@ console.log(maxSubarraySum([],4)) // null
 // maxSubarraySum efficient solution
 // O(n) time complexity
 function maxSubarraySumPlus(arr,n) {
+  // iterate over array passed in
+  for (let i = 0; i < arr.length; i++) {
+    
+  }
 
 }
